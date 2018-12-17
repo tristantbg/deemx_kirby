@@ -1,0 +1,71 @@
+body, html
+	span(1)
+	background $primary
+	color $secondary
+
+*
+	box-sizing(border-box)
+	&:not(input)
+		hideselect()
+
+video::-webkit-media-controls
+	display none
+
+video::-webkit-media-controls-play-button {}
+
+video::-webkit-media-controls-volume-slider {}
+
+video::-webkit-media-controls-mute-button {}
+
+video::-webkit-media-controls-timeline {}
+
+video::-webkit-media-controls-current-time-display {}
+
+a, a:hover, a:visited, a:focus
+	color inherit
+	text-decoration none
+	cursor pointer
+
+.hidden
+	display none
+
+.lazy
+	transition opacity 100ms ease
+	opacity 0
+
+.lazy-blur
+	transition filter 100ms ease
+	filter: blur(5px)
+
+.lazy, .lazy-blur
+	&.lazyloaded, &.flickity-lazyloaded
+		opacity 1
+		filter: none
+
+.responsive-image
+	hideselect()
+	position relative
+	overflow hidden
+	.ph
+		display none
+	img
+		display block
+		// position absolute
+		// top 0
+		// left 0
+
+#container
+	position relative
+
+#main, #container, #page-content
+	span(1)
+
+[event-target]
+	cursor pointer
+
+body.is-loading
+	overflow hidden
+	cursor wait
+	#container
+		pointer-events none
+

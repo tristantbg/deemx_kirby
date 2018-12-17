@@ -1,0 +1,64 @@
+webfont('UniversLTStdLight', 'UniversLTStdLight')
+
+text()
+	font-family UniversLTStdLight, sans-serif
+
+// Main font styles
+
+::selection
+	background alpha($secondary, 0.5)
+
+::-moz-selection
+	background alpha($secondary, 0.5)
+
+body,html
+	-webkit-text-size-adjust 100%
+
+html
+	font-size 12px
+	+above($xxl + 1)
+		font-size 0.6vw
+	+below($md)
+		font-size 12px
+
+body
+	text()
+	font-size $normal
+	line-height 1
+	font-smoothing()
+
+p
+	line-height inherit
+	&:not(:last-child)
+		margin-bottom 1em
+
+.uppercase
+	text-transform uppercase
+
+.text-center
+	text-align center
+
+bullet()
+	padding-left 0.9em
+	position relative
+	&::after
+		content ''
+		width 0.4em
+		height 0.4em
+		left 0
+		top 0.2em
+		border 1px solid currentColor
+		border-radius 100%
+		position absolute
+	&:hover, &.active
+		&::after
+			background currentColor
+	&.blink:not(:hover)::after
+		animation bullet-blink 1.3s linear infinite
+
+blink()
+	&::after
+		animation bullet-blink 1.3s linear infinite
+
+.bullet
+	bullet()
