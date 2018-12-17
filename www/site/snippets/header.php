@@ -74,8 +74,6 @@
 
 <body<?php e($page->isHomepage(), ' class="with-intro"') ?> page-type="<?= $page->intendedTemplate() ?>">
 
-<?php snippet('password-protect') ?>
-
 <div id="loader"></div>
 
 <div id="main">
