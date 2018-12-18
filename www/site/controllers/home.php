@@ -1,7 +1,11 @@
 <?php
 
 return function ($site, $page) {
-  echo $page->id();
+
+  $pagination = param('page');
+  if($pagination) {
+    $nextPage = $pagination + 1;
+  }
   $dataClass = new \Deemx\Home();
   $data = $dataClass->get();
 
@@ -9,6 +13,7 @@ return function ($site, $page) {
   $data['items'] = [];
 
   return [
-    'data' => $data
+    'data' => $data,
+    'nextPage' => $nextPage ?? null
   ];
 };

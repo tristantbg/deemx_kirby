@@ -24,5 +24,6 @@ ok home
   }
 ?>
 
-<?php $next_page = isset($_GET["page"]) ? $_GET["page"] + 1 : 2; ?>
-<a href="<?php echo "/?page=".$next_page; ?>">Next page</a>
+<?php if ($nextPage): ?>
+  <a href="<?= $page->url()."/page:".$nextPage; ?>">Next page</a>
+<?php endif ?>
