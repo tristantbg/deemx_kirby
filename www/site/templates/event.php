@@ -1,4 +1,6 @@
-ok home
+<?php snippet('header') ?>
+
+ok event
 
 <?php
   foreach($data['items'] as $item) {
@@ -26,3 +28,5 @@ ok home
 
 <?php $next_page = isset($_GET["page"]) ? $_GET["page"] + 1 : 2; ?>
 <a href="<?php echo "/?page=".$next_page; ?>">Next page</a>
+
+<?php snippet('footer') ?>

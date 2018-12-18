@@ -1,3 +1,5 @@
+<?php snippet('header') ?>
+
 ok home
 
 <?php
@@ -25,5 +27,7 @@ ok home
 ?>
 
 <?php if ($nextPage): ?>
-  <a href="<?= $page->url()."/page:".$nextPage; ?>">Next page</a>
+<a href="<?= $page->url()."/page:".$nextPage ?>">Next page</a>
 <?php endif ?>
+
+<?php snippet('footer') ?>
