@@ -2,6 +2,8 @@
 
 ok home
 
+<?php var_dump($data) ?>
+
 <?php
   foreach($data['items'] as $item) {
     echo $item->id."<br />";
