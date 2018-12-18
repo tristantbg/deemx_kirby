@@ -30,7 +30,8 @@
     	$response = \Kirby\Http\Remote::get("https://ccs-backend.ngx.host/data/".$url, [
 			'headers' => [
 				// 'Authorization' => 'Basic ' . base64_encode($email . ':' . $password)
-			]
+			],
+			'method' => 'POST'
 		]);
 
 		$page = json_decode($response->content());
