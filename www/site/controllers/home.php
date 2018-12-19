@@ -2,7 +2,7 @@
 
 return function ($site, $page) {
 
-  $currentPage = param('page') ? param('page') : 1;
+  $currentPage = param('page') ? param('page') : 0;
   $nextPage = $currentPage ? $currentPage + 1 : null;
 
   $dataClass = new \Deemx\Home();
