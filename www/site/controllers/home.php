@@ -2,19 +2,14 @@
 
 return function ($site, $page) {
 
-  $pagination = param('page');
-  if($pagination) {
-    $nextPage = $pagination + 1;
-  }
-  $dataClass = new \Deemx\Home();
-  $data = $dataClass->get();
+  $currentPage = param('page') ? param('page') : 1;
+  $nextPage = $currentPage ? $currentPage + 1 : null;
 
-  if(!$data) {
-  	// $data = [];
-  }
+  $dataClass = new \Deemx\Home();
+  $data = $dataClass->get(['page' => $nextPage, 'per_page' => 20]);
 
   return [
     'data' => $data,
-    'nextPage' => $nextPage ?? null
+    'nextPage' => $nextPage
   ];
 };

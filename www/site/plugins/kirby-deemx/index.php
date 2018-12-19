@@ -7,18 +7,6 @@ if (!class_exists('Deemx\Api')) {
 Kirby::plugin('deemx/frontend', [
 
   'routes' => [
-    // [
-    //   'pattern' => '/',
-    //   'action'  => function () {
-    //     return new Page([
-    //       'slug' => $handle,
-    //       'template' => 'home',
-    //       'content' => [
-    //         'title' => 'Home',
-    //       ]
-    //     ]);
-    //   }
-    // ],
     [
       'pattern' => 'event/(:any)',
       'action'  => function ($handle) {
