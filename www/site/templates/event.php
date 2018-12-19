@@ -16,7 +16,6 @@
     echo $item->subtitle . "<br />";
     echo $item->vernissage_date . "<br />";
     echo $item->vernissage_time . "<br />";
-    echo "<hr />";
     echo "<a href='". $site->url() ."/event/".$item->slug."'>Go to post</a>";
     echo "<hr />";
 ?>
