@@ -1,11 +1,12 @@
 <?php snippet('header') ?>
 
-ok home
+Homepage
 
 <?php var_dump($data) ?>
 
+<?php if ($data): ?>
 <?php
-  foreach($data['items'] as $item) {
+  foreach($data->items as $item) {
     echo $item->id."<br />";
     echo $item->title . "<br />";
     echo $item->content . "<br />";
@@ -27,6 +28,7 @@ ok home
     echo "<hr />";
   }
 ?>
+<?php endif ?>
 
 <?php if ($nextPage): ?>
 <a href="<?= $page->url()."/page:".$nextPage ?>">Next page</a>

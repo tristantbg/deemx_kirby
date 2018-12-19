@@ -9,8 +9,9 @@ return function ($site, $page) {
   $dataClass = new \Deemx\Home();
   $data = $dataClass->get();
 
-  $data = [];
-  $data['items'] = [];
+  if(!$data) {
+  	// $data = [];
+  }
 
   return [
     'data' => $data,
